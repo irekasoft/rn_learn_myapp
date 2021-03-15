@@ -10,14 +10,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
 import SecondScreen from './screens/SecondScreen'
 
-
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 
 const Stack = createStackNavigator();
-
 
 const HomeStack = () => {
   return (
@@ -37,10 +34,8 @@ class MyApp extends Component {
       <NavigationContainer>
 
       {/* <Stack.Navigator>
-
         <Stack.Screen name="home" component={HomeScreen } />   
-        <Stack.Screen name="second" component={SecondScreen } />             
-        
+        <Stack.Screen name="second" component={SecondScreen } />
       </Stack.Navigator> */}
 
        <Tab.Navigator
