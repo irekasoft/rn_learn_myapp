@@ -25,7 +25,12 @@ class HomeScreen extends Component {
           {this.state.text}
         </Text>
   
-        <Cell onPress={()=>{ alert('hi asdfs') }} title={"ABC 1"} />
+        <Cell onPress={()=>{ 
+            
+            this.props.navigation.navigate('second')
+
+         }} title={"ABC 1"} />
+
         <Cell title={"ABC 1"} />
         <Cell title={"ABC 1"} />
   
