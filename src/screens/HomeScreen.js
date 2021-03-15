@@ -17,10 +17,11 @@ class HomeScreen extends Component {
    render() {
        return (
         <View style={styles.container} >
+        <ScrollView>
         <KeyboardAvoidingView
          behavior={Platform.OS === "ios" ? "padding" : "height"}      
        >
-        <ScrollView>
+        
         <Text>
           {this.state.text}
         </Text>
@@ -33,6 +34,8 @@ class HomeScreen extends Component {
 
         <Cell title={"ABC 1"} />
         <Cell title={"ABC 1"} />
+
+        <View style={{padding:12}}>
   
         <TextInput 
           style={{
@@ -70,9 +73,12 @@ class HomeScreen extends Component {
   
         <Text>I'm pressable!</Text>
         </Pressable>
+
+        </View>
   
-        </ScrollView>
         </KeyboardAvoidingView>
+
+        </ScrollView>
         </View>
        );
    }
@@ -82,7 +88,7 @@ class HomeScreen extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      padding: 24,
+      padding: 0,
       justifyContent: 'center',
       alignItems: 'stretch',
       backgroundColor: "#eaeaea"

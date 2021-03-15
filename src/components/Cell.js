@@ -6,7 +6,7 @@ class Cell extends Component {
        return (
         <TouchableOpacity 
           onPress={this.props.onPress}
-          style={{flexDirection:'row', backgroundColor:'grey', padding: 6 }}        
+          style={{flexDirection:'row', backgroundColor:'lightGrey', padding: 6 }}        
         >
         <Image
          style={{
