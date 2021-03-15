@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Image, Pressable, Button, TextInput, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, StyleSheet, Image,
+  Pressable, Button, TextInput, KeyboardAvoidingView, Platform,
+  ScrollView
+
+ } from 'react-native'
 
 import Cell from './src/components/Cell'
 
@@ -22,11 +26,20 @@ class App extends Component {
       <KeyboardAvoidingView
        behavior={Platform.OS === "ios" ? "padding" : "height"}      
      >
+      <ScrollView>
       <Text>
         {this.state.text}
       </Text>
 
       <Cell title={"ABC 1"} />
+      <Cell title={"ABC 1"} />
+      <Cell title={"ABC 1"} />
+      <Cell title={"ABC 1"} />
+      <Cell title={"ABC 1"} />
+      <Cell title={"ABC 1"} />
+      <Cell title={"ABC 1"} />
+      <Cell title={"ABC 1"} />
+      
 
       <TextInput 
         style={{
@@ -41,18 +54,17 @@ class App extends Component {
         placeholder="Input"
 
         onChangeText={(text)=>{
-
           this.setState({
             text: text,
           })
-
         }}
 
       />
 
        
       <Pressable onPress={()=>{
-        alert('a');
+        alert(this.state.text);
+
       }
       }>
 
@@ -66,6 +78,7 @@ class App extends Component {
       <Text>I'm pressable!</Text>
       </Pressable>
 
+      </ScrollView>
       </KeyboardAvoidingView>
       </View>
     )
