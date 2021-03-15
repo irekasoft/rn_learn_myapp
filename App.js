@@ -1,21 +1,102 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react'
+import { View, Text, StyleSheet, Image, Pressable, Button, TextInput, KeyboardAvoidingView, Platform } from 'react-native'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import Cell from './src/components/Cell'
+
+class App extends Component {
+
+  constructor(props){
+
+    super(props);
+
+    this.state = {
+      text: '',
+    }
+
+  }  
+
+
+  render(){
+    return (     
+      <View style={styles.container} >
+      <KeyboardAvoidingView
+       behavior={Platform.OS === "ios" ? "padding" : "height"}      
+     >
+      <Text>
+        {this.state.text}
+      </Text>
+
+      <Cell title={"ABC 1"} />
+
+      <TextInput 
+        style={{
+          padding:8,
+          // backgroundColor:'skyblue',
+          marginVertical: 6,
+          borderColor: 'grey',
+          borderStyle: 'solid',
+          borderWidth: 1,
+        }}
+
+        placeholder="Input"
+
+        onChangeText={(text)=>{
+
+          this.setState({
+            text: text,
+          })
+
+        }}
+
+      />
+
+       
+      <Pressable onPress={()=>{
+        alert('a');
+      }
+      }>
+
+      <Button
+        onPress={()=>{}}
+        title="Learn More"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />  
+
+      <Text>I'm pressable!</Text>
+      </Pressable>
+
+      </KeyboardAvoidingView>
+      </View>
+    )
+  }
+
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    padding: 24,
     justifyContent: 'center',
+    alignItems: 'stretch',
+    backgroundColor: "#eaeaea"
+  },
+  title: {
+    marginTop: 16,
+    paddingVertical: 8,
+    borderWidth: 4,
+    borderColor: "#20232a",
+    borderRadius: 6,
+    backgroundColor: "#61dafb",
+    color: "#20232a",
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "bold"
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
   },
 });
+
+export default App;
